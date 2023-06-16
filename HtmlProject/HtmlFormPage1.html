@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Basic User Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+    <h2>Enter user data</h2>
+
+    <form action="/HtmlFormPage2.html" id="myForm" >
+        <label for="firstName">First Name:</label>
+        <input id="firstName" name="firstName" type="text" oninput="cacheInput(this)"><br><br>
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" name="lastName" type="text" oninput="cacheInput(this)"><br><br>
+        <label for="age">Age:</label>
+        <input id="age" name="age" type="number" oninput="cacheInput(this)"><br><br>
+        <br>
+
+        <div class="button">
+        <button id="saveButton" type="submit"> Save User</button> 
+        <br> <br>
+        <button id ="deleteButton" type="submit"> Delete User</button> 
+        </div>
+    </form>
+    
+    <table id="data-table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody id="data-body"></tbody>
+      </table>
+    </div>
+      <script src="Functions.js"></script>
+</body>
+
+</html>
