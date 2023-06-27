@@ -21,7 +21,7 @@ function GetAllPassengers() {
   
     const [passengerList, setPassengerList] = useState([]);
 
-    const [selectedOptions, setSelectedOptions] = useState({ });
+    const [selectedOptions, setSelectedOptions] = useState({ orderBy:"", sortOrder:"" });
 
 
 
@@ -42,15 +42,23 @@ function GetAllPassengers() {
         { id: '0735eb73-1591-4d6d-814f-150a01884ea5', name:'retired', value: 'retired', label: 'Retired' }
         ]
 
+
     function selectDropdown(e) {
-        e.preventDefault();
-        debugger;
-        const { name, value } = e.target;
-        setSelectedOptions(prevOptions => ({
-            ...prevOptions,
-            [name]: value
-        }));
-        console.log(selectedOptions)
+      e.preventDefault();
+      const { value } = e.target;
+      debugger;
+      if(orderByOptions.some(item => item.value === value))
+      {
+        setSelectedOptions({...selectedOptions,
+          orderBy: value
+        });
+      }
+      else
+      {
+        setSelectedOptions({...selectedOptions,
+          sortOrder: value});
+      }
+
     }
 
     function handleCheckboxChange(e) {

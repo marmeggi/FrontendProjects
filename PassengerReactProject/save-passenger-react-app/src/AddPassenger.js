@@ -67,7 +67,7 @@ function AddPassenger() {
        setSelectedOption({});
      })
      */
-    PassengerDataService.create(passengerWithEmploymentStatus)
+    PassengerDataService.create(passengerWithEmploymentStatusId)
       .then(response => {
         console.log(response.data);
         setPassenger({});
@@ -82,8 +82,8 @@ function AddPassenger() {
         <FormElement name="lastName" type="text" label="Last Name" handleChange={handleChange}></FormElement>
         <FormElement name="dateOfBirth" type="date" label="DateOfBirth" handleChange={handleChange}></FormElement>
         <FormElement name="cityOfResidence" type="text" label="City Of Residence" handleChange={handleChange}></FormElement>
-        <DropDown name="employmentStatus" options={options} label="Employment Status" value={selectedOption.value}
-          selectedOption={selectedOption.label} handleChange={selectDropdown}>
+        <DropDown  options={options} label="Employment Status" 
+          selectedOption={selectedOption.value} handleChange={selectDropdown}>
           </DropDown>
         {/*<Button label= "Delete" handleClick={handleSubmit} ></Button> */}
         <Button label="Save Passenger" handleClick={handleSubmit}></Button>
